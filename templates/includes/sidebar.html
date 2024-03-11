@@ -1,0 +1,12 @@
+{% block sidebar %}
+<div class="position-fixed">
+    <div class="card">
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="{% url 'index' %}" class="btn btn-outline-success btn-block">Home</a></li>
+                <li class="list-group-item"><a href="{% url 'tags-list' %}" class="btn btn-outline-success btn-block">Tags</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
