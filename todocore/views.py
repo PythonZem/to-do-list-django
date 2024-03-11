@@ -8,7 +8,7 @@ from todocore.models import Task, Tag
 
 class TaskListView(ListView):
     model = Task
-    ordering = ["is_done"]
+    ordering = ["is_done", "-datetime"]
     paginate_by = 8
     template_name = "todocore/index.html"
 
