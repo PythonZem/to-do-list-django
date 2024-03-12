@@ -1,6 +1,5 @@
 from django.test import TestCase
 
-
 from todocore.models import Tag, Task
 
 

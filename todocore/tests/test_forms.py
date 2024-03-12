@@ -1,4 +1,5 @@
 from django.test import TestCase
+
 from todocore.forms import TaskForm
 from todocore.models import Tag
 

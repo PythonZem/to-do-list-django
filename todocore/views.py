@@ -1,6 +1,11 @@
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, DeleteView, ListView
+from django.views.generic import (
+    CreateView,
+    UpdateView,
+    DeleteView,
+    ListView
+)
 
 from todocore.forms import TaskForm
 from todocore.models import Task, Tag
