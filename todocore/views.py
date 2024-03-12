@@ -32,11 +32,6 @@ def task_make_is_not_dane(request, pk):
     return HttpResponseRedirect(reverse_lazy(viewname="index"))
 
 
-def task_delete(request, pk):
-    Task.objects.get(id=pk).delete()
-    return HttpResponseRedirect(reverse_lazy(viewname="index"))
-
-
 class TaskCreateView(CreateView):
     model = Task
     form_class = TaskForm
@@ -51,12 +46,7 @@ class TaskUpdateView(UpdateView):
 
 class TaskDeleteView(DeleteView):
     model = Task
-    success_url = "index"
-
-
-def tag_delete(request, pk):
-    Tag.objects.get(id=pk).delete()
-    return HttpResponseRedirect(reverse_lazy("tags-list"))
+    success_url = reverse_lazy("index")
 
 
 class TagCreateView(CreateView):
