@@ -18,16 +18,22 @@ class TaskListView(ListView):
     template_name = "todocore/index.html"
 
 
-def task_make_is_done(request, pk):
-    task = Task.objects.get(id=pk)
-    task.is_done = True
-    task.save()
-    return HttpResponseRedirect(reverse_lazy(viewname="index"))
+# def task_make_is_done(request, pk):
+#     task = Task.objects.get(id=pk)
+#     task.is_done = True
+#     task.save()
+#     return HttpResponseRedirect(reverse_lazy(viewname="index"))
+#
+#
+# def task_make_is_not_dane(request, pk):
+#     task = Task.objects.get(id=pk)
+#     task.is_done = False
+#     task.save()
+#     return HttpResponseRedirect(reverse_lazy(viewname="index"))
 
-
-def task_make_is_not_dane(request, pk):
+def task_change_status(request, pk):
     task = Task.objects.get(id=pk)
-    task.is_done = False
+    task.is_done = not task.is_done
     task.save()
     return HttpResponseRedirect(reverse_lazy(viewname="index"))
 

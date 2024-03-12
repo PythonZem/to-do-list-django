@@ -11,9 +11,9 @@
             <div>
                 <h4>{{ task }}</h4>{% if task.is_done %} <h4 style="color: green">Done!</h4>{% else %} <h4 style="color: red">Not Done!</h4>{% endif %}
                 {% if task.is_done %}
-                    <a href="{% url 'task-is-not-done' pk=task.id %}" class="btn btn-secondary">Undo</a>
+                    <a href="{% url 'task-change-status' pk=task.id %}" class="btn btn-secondary">Undo</a>
                 {% else %}
-                    <a href="{% url 'task-is-done' pk=task.id %}" class="btn btn-success">Completed</a>
+                    <a href="{% url 'task-change-status' pk=task.id %}" class="btn btn-success">Completed</a>
                 {% endif %}
             </div>
     
